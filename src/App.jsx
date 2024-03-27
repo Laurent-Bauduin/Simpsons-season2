@@ -1,30 +1,50 @@
 import Avatar from "./components/Avatar";
 
 function App() {
-	const bart = {
-		image: "https://www.stickees.com/files/cartoon/the-simpsons/2239-bart-simpson-.png",
-		firstName: "Bart",
-		lastName: "Simpson",
-	};
-	const homer = {
-		image: "https://www.stickees.com/files/cartoon/the-simpsons/2248-homer-simpson-happy.png",
-		firstName: "Homer",
-		lastName: "Simpson",
-	};
+	const personnages = [
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2247-homer-simpson-beer.png",
+			firstName: "Homer",
+			lastName: "Simpson",
+		},
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2252-marge-simpson-sticker.png",
+			firstName: "Marge",
+			lastName: "Simpson",
+		},
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2240-bart-simpson-skate.png",
+			firstName: "Bart",
+			lastName: "Simpson",
+		},
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2250-lisa-simpson-sticker.png",
+			firstName: "Lisa",
+			lastName: "Simpson",
+		},
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2251-maggie-simpson-sticker.png",
+			firstName: "Maggie",
+			lastName: "Simpson",
+		},
+		{
+			image: "https://www.simpsonspark.com/images/persos/contributions/petit-papa-noel-22647.jpg",
+			firstName: "petit Papa Noel",
+			lastName: "Simpson",
+		},
+	];
 
 	return (
 		<>
 			<h1>La famille Simpson</h1>
-			<Avatar
-				img={bart.image}
-				firstName={bart.firstName}
-				lastName={bart.lastName}
-			/>
-			<Avatar
-				img={homer.image}
-				firstName={homer.firstName}
-				lastName={homer.lastName}
-			/>
+			{personnages.map((personnage, index) => (
+				<Avatar
+					key={index}
+					img={personnage.image}
+					firstName={personnage.firstName}
+					lastName={personnage.lastName}
+				/>
+			))}
 		</>
 	);
 }
