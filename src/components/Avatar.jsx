@@ -1,7 +1,11 @@
+import {useState} from "react";
+
 function Avatar({ img, firstName, lastName }) {
 	// function Avatar({img, firstName, lastName}) =
 	// function Avatar(props) avec props qui est destructuré :
 	//  const {img, firstName, lastName} = props;
+	const [donutsCount, setDonutsCount] = useState(0);
+
 	return (
 		<>
 			<img src={img} alt={firstName} />
@@ -13,8 +17,11 @@ function Avatar({ img, firstName, lastName }) {
 			<p>
 				{firstName} {lastName}
 			</p>
+			<button onClick={() => setDonutsCount(donutsCount + 1)}>🍩 {donutsCount}</button>
+			<br />
 		</>
 	);
 }
+
 
 export default Avatar;
